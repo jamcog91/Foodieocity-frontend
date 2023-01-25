@@ -1,13 +1,17 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+video {
+  width: 100vw;
+ 
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.enter {
+  position: absolute;
+  font-family: cursive;
+  font-size: 48pt;
+  background-color: black;
+  color: white;
+  border: none;
+border-radius: 45%;
+  padding: 25px 45px;
+  bottom: 50px;
+  right: 50px;
 }

@@ -1,6 +1,7 @@
+import React from 'react';
 import Header from './Header';
 
-function HomePage() {
+function HomePage({restaurants, setRestaurants}) {
     return (
         <Header />
     )
