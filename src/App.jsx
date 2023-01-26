@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import CoverPage from './CoverPage';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from './HomePage';
+import RestaurantPage from './RestaurantPage';
 
 
 
 function App() {
   const [restaurants, setRestaurants] = useState([]);
+  const [selectedRestaurant, setRestaurant] = useState([])
 
   useEffect(() => {
     let getRestaurants = async () => {
@@ -26,8 +28,13 @@ function App() {
     },
     {
       path: "/restaurants",
-      element: <HomePage setRestaurants={setRestaurants} restaurants={restaurants} />
+      element: <HomePage setRestaurant={setRestaurant}  restaurants={restaurants}  />
+    },
+    {
+      path: "/restaurants/:id",
+      element: <RestaurantPage selectedRestaurant={selectedRestaurant} />
     }
+
   ]);
 
   console.log(restaurants)

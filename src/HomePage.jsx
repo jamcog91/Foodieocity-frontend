@@ -1,9 +1,15 @@
 import React from 'react';
-import Header from './Header';
+import RestaurantCard from './RestaurantCard';
+//import Header from './Header';
 
-function HomePage({restaurants, setRestaurants}) {
+function HomePage({restaurants, setRestaurant}) {
     return (
-        <Header />
-    )
+    <div className='home-container'> {
+    restaurants.map((restaurant) => {
+    return <RestaurantCard key={restaurant.id} setRestaurant={setRestaurant} restaurant={restaurant} />
+    })}</div>
+)
 }
 export default HomePage
+
+// <Header />
