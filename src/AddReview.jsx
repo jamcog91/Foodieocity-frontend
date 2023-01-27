@@ -1,29 +1,29 @@
 import React, { useState } from "react"
 
-const AddReview = ({selectedRestaurant}) => {
+const AddReview = ({selectedRestaurant, setNewReview, newReview}) => {
     const [name, setName] = useState("");
     const [rating, setRating] = useState("");
     const [review, setReview] = useState("");
 
-    console.log(name)
-    console.log(rating)
-    console.log(review)
+    
 
     const handleOnSubmit = (e) => {
         e.preventDefault()
-        fetch(`http://localhost:9292/restaurants/${selectedRestaurant.id}`, {
+        setNewReview([...newReview, {name: name, star_rating: rating, review: review}])
+        fetch(`http://localhost:9292/reviews`, {
         method: "POST",
         headers: {
         "Content-Type": "application/json",
     },
-        body: JSON.stringify({
-        reviews: [{
-            customer: name,
+        body: JSON.stringify({  
             star_rating: rating,
-            review: review
-        }]
+            review: review,
+            restaurant_id: selectedRestaurant.id
   }),
 });
+
+
+
     }
     return (
         <div>

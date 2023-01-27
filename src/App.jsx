@@ -21,6 +21,8 @@ function App() {
     getRestaurants()
   }, [])
 
+  console.log(restaurants)
+
   const router = createBrowserRouter([
     {
       path: "/",
